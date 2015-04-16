@@ -100,6 +100,9 @@
         if ( newWidth != null ) {
             s.stickyElement.css('width', newWidth);
         }
+        // Sometimes on resize 
+        var stickyHeight = s.stickyElement.outerHeight();
+        s.stickyWrapper.css('height', stickyHeight);
       }
     },
     methods = {
