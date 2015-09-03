@@ -33,12 +33,15 @@
       center: false,
       getWidthFrom: '',
       widthFromWrapper: true, // works only when .getWidthFrom is empty
-      responsiveWidth: false
+      responsiveWidth: false,
+      scrollUpOnly: false,    // show element only on scroll up   
+      scrollDownOnly: false   // show element only on scroll down
     },
     $window = $(window),
     $document = $(document),
     sticked = [],
     windowHeight = $window.height(),
+    lastScrollTop = 0,
     scroller = function() {
       var scrollTop = $window.scrollTop(),
         documentHeight = $document.height(),
@@ -52,8 +55,8 @@
 
 	//update height in case of dynamic content
 	s.stickyWrapper.css('height', s.stickyElement.outerHeight());
-
-        if (scrollTop <= etse) {
+        var stop = s.scrollUpOnly && lastScrollTop < scrollTop || s.scrollDownOnly && lastScrollTop > scrollTop;
+        if (scrollTop <= etse || stop) {
           if (s.currentTop !== null) {
             s.stickyElement
               .css({
@@ -110,6 +113,7 @@
           }
         }
       }
+      lastScrollTop = scrollTop;
     },
     resizer = function() {
       windowHeight = $window.height();

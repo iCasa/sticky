@@ -46,6 +46,8 @@ Check the `example-*.html` files for some examples.
 - `getWidthFrom`: Selector of element referenced to set fixed width of "sticky" element.
 - `widthFromWrapper`: boolean determining whether width of the "sticky" element should be updated to match the wrapper's width. Wrapper is a placeholder for "sticky" element while it is fixed (out of static elements flow), and it's width depends on the context and CSS rules.
 - `responsiveWidth`: boolean determining whether widths will be recalculated on window resize (using getWidthfrom).
+- `scrollUpOnly`: show "sticky" element only when on scroll up (default: `false`).
+- `scrollDownOnly`: show "sticky" element only when on scroll down (default: `false`).
 
 ## Methods
 
