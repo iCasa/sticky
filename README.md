@@ -48,6 +48,7 @@ Check the `example-*.html` files for some examples.
 - `responsiveWidth`: boolean determining whether widths will be recalculated on window resize (using getWidthfrom).
 - `scrollUpOnly`: show "sticky" element only when on scroll up (default: `false`).
 - `scrollDownOnly`: show "sticky" element only when on scroll down (default: `false`).
+- `stickBottom`: stick the element on the bottom of window (default: `false`).
 
 ## Methods
 
